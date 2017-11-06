@@ -15,7 +15,9 @@
         </div>        
       </ul>
       <p appBasicHighlight>Style me with basic directive!</p> <!--We add our attribute directive as an attribute -->
-      <p appBetterHighlight>Style me with a better directive!</p> <!--We add our attribute directive as an attribute -->
+      <!-- <p appBetterHighlight  [defaultColor]="'yellow'" [highLightColor]= "'red'">Style me with a better directive!</p> We add our Attribute Directive as an attribute. When the Input have no alias. -->
+      <p [appBetterHighlight]="'red'" [defaultColor]="'yellow'">Style me with a better directive!</p> <!--We add our attribute directive as an attribute. When the Input (property binding) has an alias with the same name of the directive. -->
+      <p [appBetterHighlight]="'red'" defaultColor="yellow">Style me with a better directive!</p> <!-- SPECIAL CASE: We can omit the square brackets of the prop and single quotes JUST when we pass a string -->
     </div>
   </div>
 </div>
