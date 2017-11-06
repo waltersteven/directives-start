@@ -14,7 +14,8 @@
             <li class="list-group-item" [ngClass]="{odd: even % 2 !== 0}" [ngStyle] = "{backgroundColor: even % 2 !== 0 ? 'yellow': 'transparent'}" *ngFor= "let even of evenNumbers">{{ even }}</li> 
         </div>        
       </ul>
-      <p appBasicHightlight>Style me with basic directive!</p> <!--We add our attribute directive as an attribute -->
+      <p appBasicHighlight>Style me with basic directive!</p> <!--We add our attribute directive as an attribute -->
+      <p appBetterHighlight>Style me with a better directive!</p> <!--We add our attribute directive as an attribute -->
     </div>
   </div>
 </div>
