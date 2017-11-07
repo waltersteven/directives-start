@@ -1,3 +1,4 @@
+//Creating an enhanced attribute directive
 import { Directive, OnInit, Renderer2, ElementRef, HostListener, HostBinding, Input } from '@angular/core';
 
 @Directive({

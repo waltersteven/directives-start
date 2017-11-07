@@ -10,10 +10,23 @@
         <div *ngIf="onlyOdd">
             <li class="list-group-item" [ngClass]="{odd: odd % 2 !== 0}" [ngStyle] = "{backgroundColor: odd % 2 !== 0 ? 'yellow': 'transparent'}" *ngFor= "let odd of oddNumbers">{{ odd }}</li> 
         </div>
-        <div *ngIf="!onlyOdd">
+
+        <!-- <div *ngIf="!onlyOdd">
             <li class="list-group-item" [ngClass]="{odd: even % 2 !== 0}" [ngStyle] = "{backgroundColor: even % 2 !== 0 ? 'yellow': 'transparent'}" *ngFor= "let even of evenNumbers">{{ even }}</li> 
-        </div>        
+        </div>   -->
+
+        <!-- ngIf defined as property binding, when we put a STAR it transforms to this syntax. -->
+        <!-- <ng-template [ngIf]= "!onlyOdd">
+          <div>
+              <li class="list-group-item" [ngClass]="{odd: even % 2 !== 0}" [ngStyle] = "{backgroundColor: even % 2 !== 0 ? 'yellow': 'transparent'}" *ngFor= "let even of evenNumbers">{{ even }}</li> 
+          </div>
+        </ng-template> -->
+
+        <div *appUnless="onlyOdd"> <!-- We put a STAR because its a structural directive -->
+            <li class="list-group-item" [ngClass]="{odd: even % 2 !== 0}" [ngStyle] = "{backgroundColor: even % 2 !== 0 ? 'yellow': 'transparent'}" *ngFor= "let even of evenNumbers">{{ even }}</li> 
+        </div> 
       </ul>
+      
       <p appBasicHighlight>Style me with basic directive!</p> <!--We add our attribute directive as an attribute -->
       <!-- <p appBetterHighlight  [defaultColor]="'yellow'" [highLightColor]= "'red'">Style me with a better directive!</p> We add our Attribute Directive as an attribute. When the Input have no alias. -->
       <p [appBetterHighlight]="'red'" [defaultColor]="'yellow'">Style me with a better directive!</p> <!--We add our attribute directive as an attribute. When the Input (property binding) has an alias with the same name of the directive. -->
